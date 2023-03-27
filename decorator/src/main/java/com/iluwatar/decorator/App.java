@@ -53,6 +53,7 @@ public class App {
     LOGGER.info("Simple troll power: {}.\n", troll.getAttackPower());
 
     // change the behavior of the simple troll by adding a decorator
+    LOGGER.info("-----------装饰后----------");
     LOGGER.info("A troll with huge club surprises you.");
     var clubbedTroll = new ClubbedTroll(troll);
     clubbedTroll.attack();

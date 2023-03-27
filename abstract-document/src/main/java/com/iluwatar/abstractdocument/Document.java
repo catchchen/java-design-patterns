@@ -28,7 +28,7 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
- * Document interface.
+ * Document interface. base interface
  */
 public interface Document {
 

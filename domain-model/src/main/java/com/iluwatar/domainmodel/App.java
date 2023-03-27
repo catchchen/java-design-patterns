@@ -29,6 +29,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import javax.sql.DataSource;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
 import org.h2.jdbcx.JdbcDataSource;
 import org.joda.money.Money;
 
@@ -50,6 +51,7 @@ import org.joda.money.Money;
 public class App {
 
   public static final String H2_DB_URL = "jdbc:h2:~/test";
+//  public static final String MYSQL_DB_URL = "jdbc:mysql://localhost:3307/tt?characterEncoding=UTF-8";
 
   public static final String CREATE_SCHEMA_SQL =
       "CREATE TABLE CUSTOMERS (name varchar primary key, money decimal);"
@@ -59,9 +61,9 @@ public class App {
           + "customer_name varchar references CUSTOMERS(name));";
 
   public static final String DELETE_SCHEMA_SQL =
-      "DROP TABLE CUSTOMERS IF EXISTS;"
-          + "DROP TABLE PURCHASES IF EXISTS;"
-          + "DROP TABLE PRODUCTS IF EXISTS;";
+      "DROP TABLE IF EXISTS CUSTOMERS;"
+          + "DROP TABLE IF EXISTS PURCHASES;"
+          + "DROP TABLE IF EXISTS PRODUCTS;";
 
   /**
    * Program entry point.
@@ -71,6 +73,9 @@ public class App {
    */
   public static void main(String[] args) throws Exception {
 
+//    Class.forName("com.mysql.cj.jdbc.Driver");
+//    System.out.println(DELETE_SCHEMA_SQL);
+//    System.out.println(CREATE_SCHEMA_SQL);
     // Create data source and create the customers, products and purchases tables
     final var dataSource = createDataSource();
     deleteSchema(dataSource);
@@ -153,7 +158,10 @@ public class App {
 
   private static DataSource createDataSource() {
     var dataSource = new JdbcDataSource();
+    System.out.println(CREATE_SCHEMA_SQL);
     dataSource.setUrl(H2_DB_URL);
+//    dataSource.setUser("root");
+//    dataSource.setPassword("root");
     return dataSource;
   }
 

@@ -75,4 +75,16 @@ public class App {
         p.getPrice().orElse(null))
     );
   }
+
+/*
+10:51:07.238 [main] INFO com.iluwatar.abstractdocument.App - Constructing parts and car
+10:51:07.247 [main] INFO com.iluwatar.abstractdocument.App - Here is our car:
+10:51:07.247 [main] INFO com.iluwatar.abstractdocument.App - -> model: 300SL
+10:51:07.251 [main] INFO com.iluwatar.abstractdocument.App - -> price: 10000
+10:51:07.251 [main] INFO com.iluwatar.abstractdocument.App - -> parts:
+10:51:07.258 [main] INFO com.iluwatar.abstractdocument.App - 	wheel/15C/100
+10:51:07.258 [main] INFO com.iluwatar.abstractdocument.App - 	door/Lambo/300
+
+https://blog.csdn.net/weixin_42262245/article/details/89967191
+* */
 }

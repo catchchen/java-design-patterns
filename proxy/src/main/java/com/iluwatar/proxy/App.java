@@ -45,11 +45,21 @@ public class App {
   public static void main(String[] args) {
 
     var proxy = new WizardTowerProxy(new IvoryTower());
+
     proxy.enter(new Wizard("Red wizard"));
     proxy.enter(new Wizard("White wizard"));
     proxy.enter(new Wizard("Black wizard"));
+//    proxy.
     proxy.enter(new Wizard("Green wizard"));
     proxy.enter(new Wizard("Brown wizard"));
+
+    /*
+    10:55:56.492 [main] INFO com.iluwatar.proxy.IvoryTower - Red wizard enters the tower.
+    10:55:56.498 [main] INFO com.iluwatar.proxy.IvoryTower - White wizard enters the tower.
+    10:55:56.499 [main] INFO com.iluwatar.proxy.IvoryTower - Black wizard enters the tower.
+    10:55:56.499 [main] INFO com.iluwatar.proxy.WizardTowerProxy - Green wizard is not allowed to enter!
+    10:55:56.499 [main] INFO com.iluwatar.proxy.WizardTowerProxy - Brown wizard is not allowed to enter!
+     */
 
   }
 }

@@ -38,7 +38,6 @@ public class Kingdom {
    * The factory of kingdom factories.
    */
   public static class FactoryMaker {
-
     /**
      * Enumeration for the different types of Kingdoms.
      */

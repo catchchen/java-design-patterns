@@ -27,6 +27,6 @@ package com.iluwatar.abstractdocument.domain.enums;
  * Enum To Describe Property type.
  */
 public enum Property {
-
+  /*parts, type, price, model*/
   PARTS, TYPE, PRICE, MODEL
 }

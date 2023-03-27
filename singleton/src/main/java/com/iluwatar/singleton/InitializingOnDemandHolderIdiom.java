@@ -22,6 +22,9 @@
  */
 
 package com.iluwatar.singleton;
+/**
+ *
+ */
 
 /**
  * <p>The Initialize-on-demand-holder idiom is a secure way of creating a lazy initialized singleton

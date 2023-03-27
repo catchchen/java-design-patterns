@@ -66,6 +66,8 @@ public class CustomerDaoImpl implements CustomerDao {
   @Override
   public void update(Customer customer) throws SQLException {
     var sql = "update CUSTOMERS set money = ? where name = ?;";
+    // 定义sql 获取连接对象
+    // 预处理对象
     try (var connection = dataSource.getConnection();
         var preparedStatement = connection.prepareStatement(sql)) {
       preparedStatement.setBigDecimal(1, customer.getMoney().getAmount());

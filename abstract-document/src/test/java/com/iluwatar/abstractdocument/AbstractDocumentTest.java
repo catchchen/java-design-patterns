@@ -28,6 +28,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,6 +79,18 @@ class AbstractDocumentTest {
     var document = new DocumentImplementation(props);
     assertTrue(document.toString().contains(KEY));
     assertTrue(document.toString().contains(VALUE));
+  }
+
+  @Test
+  void test_null_optional(){
+    Optional<String> aaaa = Optional.ofNullable(null);
+
+    System.out.println(aaaa.isPresent());
+
+    System.out.println(aaaa.isEmpty());
+
+//    boolean present = Optional.empty().isPresent();
+//    System.out.println(present);
   }
 
 }

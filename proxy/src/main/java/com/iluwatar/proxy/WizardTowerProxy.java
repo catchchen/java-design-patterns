@@ -40,13 +40,14 @@ public class WizardTowerProxy implements WizardTower {
   public WizardTowerProxy(WizardTower tower) {
     this.tower = tower;
   }
-
+// only three wizard can enter
   @Override
   public void enter(Wizard wizard) {
     if (numWizards < NUM_WIZARDS_ALLOWED) {
       tower.enter(wizard);
       numWizards++;
     } else {
+//      wizard
       LOGGER.info("{} is not allowed to enter!", wizard);
     }
   }

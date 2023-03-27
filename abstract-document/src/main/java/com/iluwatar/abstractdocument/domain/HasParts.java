@@ -31,7 +31,9 @@ import java.util.stream.Stream;
  * HasParts trait for static access to 'parts' property.
  */
 public interface HasParts extends Document {
-
+  /**
+   * 默认 getParts 的实现 调用 Document的 children方法 但是这个方法也是抽象的 需要进行实现
+   */
   default Stream<Part> getParts() {
     return children(Property.PARTS.toString(), Part::new);
   }
